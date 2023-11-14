@@ -13,3 +13,4 @@ class Authorsserializers(serializers.ModelSerializer):
     class Meta:
         model=author
         fields= '__all__'
+        
