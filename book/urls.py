@@ -1,10 +1,11 @@
 from django.urls import path
-from .api import booklistapi,bookdetailapi,Authorlistapi,Authordetailapi
-from .views import  book
+from .views import BookDetailAPI,CreateListBookApiView,AuthorListAPI,AuthorDetailAPI
 
 urlpatterns = [
-    path('api/listbook',booklistapi.as_view()),
-    path('api/listbook/<int:pk>',bookdetailapi.as_view()),
-    path('api/listauthor',Authorlistapi.as_view()),
-    path('api/listauthor/<int:pk>',Authordetailapi.as_view()),
+      path('api/listbook',CreateListBookApiView.as_view()),
+      path('api/listbook/<int:pk>',BookDetailAPI.as_view()),
+    
+      path('api/listauthor',AuthorListAPI.as_view()),
+      path('api/listauthor/<int:pk>',AuthorDetailAPI.as_view()),
+    
 ]
